@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct Post {
+    var title: String
+}
+
+
 class FeedViewController: UIViewController {
 
     @IBOutlet var Posts: UIBarButtonItem!
@@ -16,27 +21,27 @@ class FeedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-}
-
-struct Post {
-    var title: String
-}
-
-
-let post = Post(title: "My new post")
-
-func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    guard segue.identifier == "newTitle" else {
-    return
-    }
-    
-    guard let postViewController = segue.destination as? PostViewController
-    else {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "NEWS" else {
         return
+        }
+
+        
+        guard let postViewController = segue.destination as? PostViewController
+        else {
+            return
+        }
+        
+        postViewController.title = post.title
+      
     }
-    
-    postViewController.title = post.title
-  
+
 }
+
+
+
+
+let post = Post(title: "My New Post")
+
+
