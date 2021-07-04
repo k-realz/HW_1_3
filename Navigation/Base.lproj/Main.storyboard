@@ -15,24 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="ZaO-yg-djq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2a-8Q-urt">
+                                <rect key="frame" x="39" y="128" width="165" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="POST">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lgH-qi-dzm" kind="show" id="Vi2-9N-RHa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7oM-dl-E6b"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Посты" id="lIx-G8-ZaX">
-                        <barButtonItem key="rightBarButtonItem" title="Пост" image="arrowshape.turn.up.right.fill" catalog="system" id="hcq-Qk-OYg">
-                            <connections>
-                                <segue destination="lgH-qi-dzm" kind="show" id="yvw-ZV-Ec4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Посты" id="lIx-G8-ZaX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="Posts" destination="hcq-Qk-OYg" id="SNh-yK-tg2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaf-tp-REd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="-14"/>
+            <point key="canvasLocation" x="1553.6231884057972" y="-14.0625"/>
         </scene>
         <!--Пост-->
         <scene sceneID="S92-cY-Q9v">
@@ -70,7 +74,7 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Alert Check"/>
                                 <connections>
-                                    <action selector="Alert:" destination="ue3-1V-2iC" eventType="touchUpInside" id="1cz-TA-4Af"/>
+                                    <action selector="tap:" destination="ue3-1V-2iC" eventType="touchUpInside" id="Dc4-e4-H9E"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,9 +86,6 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="ALERT" destination="hRH-qN-Mo2" id="0cE-F6-pFM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSL-K1-fpz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,9 +161,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
